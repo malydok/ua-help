@@ -1,36 +1,38 @@
 <template>
-  <b-steps v-model="step" :has-navigation="false" class="box p-6">
+  <b-steps v-model="step" :has-navigation="false" class="box pt-4 pb-4">
     <b-step-item
-      :label="(step >= 1 && selectedCrossing) || 'Jestem na przejściu'"
+      :label="(step >= 1 && selectedCrossing) || 'Wybierz przejście'"
       icon="crosshairs-gps"
     >
-      <div class="buttons is-justify-content-center pt-6">
+      <div class="is-flex is-flex-wrap-wrap is-justify-content-center pt-4">
         <b-button
           v-for="crossing in crossings"
           :key="crossing"
           type="is-primary"
           size="is-medium"
           @click="selectCrossing"
+          class="m-1"
           >{{ crossing }}</b-button
         >
       </div>
     </b-step-item>
     <b-step-item
-      :label="step >= 2 ? selectedHelpTypes.join(', ') : 'Potrzebuję'"
+      :label="step >= 2 ? selectedHelpTypes.join(', ') : 'Potrzeby'"
       icon="help"
     >
-      <b-field position="is-centered" class="pt-6">
+      <div class="mt-3">
         <b-checkbox-button
           v-for="helpType in helpTypes"
           :key="helpType"
           v-model="selectedHelpTypes"
           :native-value="helpType.name"
           size="is-medium"
+          class="m-1"
         >
           <b-icon :icon="helpType.icon"></b-icon>
           <span>{{ helpType.name }}</span>
         </b-checkbox-button>
-      </b-field>
+      </div>
       <div class="block has-text-centered mt-5">
         <b-button type="is-primary" size="is-medium" @click="nextStep"
           >Dalej</b-button
@@ -38,8 +40,8 @@
       </div>
     </b-step-item>
     <b-step-item label="Gdzie szukać pomocy" icon="phone">
-      <div class="tile is-ancestor pt-6">
-        <div class="tile m-4">
+      <div class="tile is-ancestor pt-4">
+        <div class="tile mt-4 mb-4">
           <div class="card">
             <div class="card-content">
               <div class="media">
@@ -58,7 +60,7 @@
             </div>
           </div>
         </div>
-        <div class="tile m-4">
+        <div class="tile mt-4 mb-4">
           <div class="card">
             <div class="card-content">
               <div class="media">
