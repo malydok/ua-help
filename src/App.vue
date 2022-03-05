@@ -1,28 +1,23 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <section class="section">
+      <h1 class="title">Znajdź pomoc</h1>
+      <h2 class="subtitle mb-6">
+        Sprecyzuj poniżej na jakim przejściu granicznym jesteś i jakie są twoje
+        konkretne potrzeby.
+      </h2>
+      <Steps />
+    </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Steps from './components/Steps.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Steps,
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
